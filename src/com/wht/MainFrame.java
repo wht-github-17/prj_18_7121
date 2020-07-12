@@ -8,10 +8,12 @@ import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
 
 import static java.awt.Frame.MAXIMIZED_BOTH;
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class MainFrame {
     public MainFrame() {
         JFrame jFrame = new JFrame("系统");
+        jFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JMenuBar bar = new JMenuBar();
         JMenu jMenuBook = new JMenu("书籍管理");
@@ -51,6 +53,8 @@ public class MainFrame {
 
 
         });
+        JMenu jMenuReader=new JMenu("读者管理");
+        bar.add(jMenuReader);
 
         jFrame.setJMenuBar(bar);
         jFrame.setExtendedState(MAXIMIZED_BOTH);
